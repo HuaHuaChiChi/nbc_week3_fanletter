@@ -1,15 +1,28 @@
-import { useNavigate } from "react-router-dom";
-import BaseButton from "../style/common/BaseButton";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import LetterForm from "../components/LetterForm";
+import LetterList from "../components/LetterList";
+import styled from "styled-components";
 
-function Main() {
-  const navigate = useNavigate();
+
+function Main({data, setData}) {
+
 
   return (
-    <div>
-      <button onClick={() => navigate("/Detail")}>fd</button>
-      <BaseButton>테스트</BaseButton>
-    </div>
+    <Container>
+      <Header/>
+      <LetterForm/>
+      <LetterList/>
+      <Footer/>
+    </Container>
   )
 }
 
 export default Main
+
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

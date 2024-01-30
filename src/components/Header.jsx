@@ -1,7 +1,8 @@
+import HeaderStyle from "../style/HeaderStyle"
 
 function Header() {
   return (
-    <div>Header</div>
+    <HeaderStyle/>
   )
 }
 
