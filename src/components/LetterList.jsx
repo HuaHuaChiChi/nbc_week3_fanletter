@@ -1,8 +1,13 @@
+import Letter from "./Letter";
 
-function LetterList() {
+function LetterList({ data }) {
   return (
-    <div>LetterList</div>
-  )
+    <div>
+      {data.map((letterData) => (
+        <Letter key={letterData.id} data={letterData} />
+      ))}
+    </div>
+  );
 }
 
-export default LetterList
+export default LetterList;

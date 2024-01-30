@@ -1,11 +1,11 @@
-import { useParams } from "react-router-dom"
+function Letter({ data }) {
 
-function Letter() {
-
-  const params = useParams
+  // const {createdAt, nickname, avatar, content, writedTo, id} = data
 
   return (
-    <div>Letter</div>
+    <div>
+      <p>{data.nickname}</p>
+    </div>
   )
 }
 

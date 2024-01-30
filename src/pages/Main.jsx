@@ -11,8 +11,8 @@ function Main({data, setData}) {
   return (
     <Container>
       <Header/>
-      <LetterForm/>
-      <LetterList/>
+      <LetterForm setData={setData}/>
+      <LetterList data={data}/>
       <Footer/>
     </Container>
   )
