@@ -1,25 +1,21 @@
+import styled from "styled-components";
 
-import styled from "styled-components"
-
-
-function BaseButton({children}) {
-
-  const BaseButton = styled.button `
-  font-size : 20px;
-  background-color : white;
+const StyledButton = styled.button`
+  font-size: 20px;
+  background-color: white;
   border-radius: 5px;
-  border : 1px solid black;
+  border: 1px solid black;
   &:hover {
-    background-color : #67b767
+    background-color: green;
   }
-  `
+`;
 
-
+function BaseButton({ children }) {
   return (
     <div>
-      <BaseButton>{children}</BaseButton>
+      <StyledButton>{children}</StyledButton>
     </div>
-  )
+  );
 }
 
-export default BaseButton
+export default BaseButton;
