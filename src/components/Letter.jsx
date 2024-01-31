@@ -5,7 +5,7 @@ function Letter({ data }) {
   return (
     <div id={id}>
       <div>
-        <div>{avatar}</div>
+        <img src={avatar} alt={"ㅎㅇ루"} />
         <span>{nickname}</span>
         <div>{createdAt}</div>
         <div>{content}</div>
