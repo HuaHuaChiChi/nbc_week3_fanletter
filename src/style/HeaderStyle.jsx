@@ -1,16 +1,38 @@
+import { useState } from "react";
 import styled from "styled-components"
 
 
-
 function HeaderStyle() {
+
+  const [selectedMember, setSelectedMember] = useState(null);
+
+  const handleMemberClick = (memberName) => {
+    setSelectedMember(memberName);
+  };
   return (
     <Container>
       <Title>야호~</Title>
       <ButtonWrap>
-        <MemberButton>카리나</MemberButton>
-        <MemberButton>닝닝</MemberButton>
-        <MemberButton>지젤</MemberButton>
-        <MemberButton>윈터</MemberButton>
+        <MemberButton
+          onClick={() => {handleMemberClick("카리나")}}
+          isSelected={selectedMember === "카리나"}
+        >카리나
+        </MemberButton>
+        <MemberButton
+          onClick={() => {handleMemberClick("윈터")}}
+          isSelected={selectedMember === "윈터"}
+        >윈터
+        </MemberButton>
+        <MemberButton
+          onClick={() => {handleMemberClick("닝닝")}}
+          isSelected={selectedMember === "닝닝"}
+        >닝닝
+        </MemberButton>
+        <MemberButton
+          onClick={() => {handleMemberClick("지젤")}}
+          isSelected={selectedMember === "지젤"}
+        >지젤
+        </MemberButton>
       </ButtonWrap>
     </Container>
   )
@@ -58,6 +80,7 @@ const MemberButton = styled.button`
   width: 100px;
   padding: 5px;
   text-align: center;
+  background-color : ${({isSelected}) => (isSelected ? "red" : "initial")};
   &:hover {
     background-color : red
   }
