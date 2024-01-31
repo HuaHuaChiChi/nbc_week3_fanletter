@@ -1,10 +1,15 @@
 function Letter({ data }) {
 
-  // const {createdAt, nickname, avatar, content, writedTo, id} = data
+  const {createdAt, nickname, avatar, content, id} = data
 
   return (
-    <div>
-      <p>{data.nickname}</p>
+    <div id={id}>
+      <div>
+        <div>{avatar}</div>
+        <span>{nickname}</span>
+        <div>{createdAt}</div>
+        <div>{content}</div>
+      </div>
     </div>
   )
 }

@@ -2,13 +2,8 @@ import { useState } from "react";
 import styled from "styled-components"
 
 
-function HeaderStyle() {
+function HeaderStyle({ selectedMember, handleMemberClick }) {
 
-  const [selectedMember, setSelectedMember] = useState(null);
-
-  const handleMemberClick = (memberName) => {
-    setSelectedMember(memberName);
-  };
   return (
     <Container>
       <Title>야호~</Title>
