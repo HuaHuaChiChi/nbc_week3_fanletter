@@ -39,5 +39,6 @@ function Header({selectedMember, setSelectedMember}) {
   </Container>
   )
 }
+//ANCHOR - isSelected는 스타일 컴포넌트에 들어갈거니까 kebob-case를 써야하나? 나중에 튜터님 질문 ㄱㄱ하자
 
 export default Header
