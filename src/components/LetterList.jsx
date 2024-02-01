@@ -1,10 +1,10 @@
-import styled from "styled-components";
 import Letter from "./Letter";
+import * as S from "../style/LetterListStyle"
 
 function LetterList({ data }) {
   return (
-    <Container>
-      <Letters>
+    <S.Container>
+      <S.Letters>
         {data.length === 0 ? (
           <p>
             아직 등록된 팬레터가 없습니다. 첫 번째 팬레터의 주인공이 되세요!
@@ -14,26 +14,9 @@ function LetterList({ data }) {
             <Letter key={letterData.id} data={letterData} />
           ))
         )}
-      </Letters>
-    </Container>
+      </S.Letters>
+    </S.Container>
   );
 }
 
 export default LetterList;
-
-const Container = styled.div`
-  width: 100vh;
-  color: white;
-  margin-bottom: 20px;
-`;
-
-const Letters = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 500px;
-  background-color: #262626;
-  padding: 20px;
-  border-radius: 5px;
-  margin: 0 auto;
-`;

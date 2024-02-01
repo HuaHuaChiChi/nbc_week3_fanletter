@@ -9,14 +9,12 @@ import {
 
 function Letter({ data }) {
 
-  console.log(data)
-
   const navigate = useNavigate();
 
   const {createdAt, nickname, avatar, content, id} = data
 
   return (
-    <LetterCard onClick={() => {navigate(`/Detail/${id}`, {state: data})}} id={id}>
+    <LetterCard onClick={() => {navigate(`/Detail/${id}`, {state: id})}} id={id}>
       <AvatarCardWrap>
       <Avatar src={avatar} alt={"ㅎㅇ루"} />
       <CardContainer>        
@@ -25,7 +23,6 @@ function Letter({ data }) {
         <Content>{content}</Content>
       </CardContainer>
       </AvatarCardWrap>
-
     </LetterCard>
   )
 }
