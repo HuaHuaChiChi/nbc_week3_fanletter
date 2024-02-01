@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const FormContainer = styled.form`
   width: 500px;
-  background-color: #3e9c3e;
+  background-color: #262626;
   border-radius: 5px;
   margin-bottom: 20px;
   padding: 20px;
@@ -25,3 +25,8 @@ export const TextArea = styled.textarea`
   width: 100%;
   padding: 5px 10px;
 `;
+
+export const Labels = styled.label`
+width : 130px;
+color : white
+`

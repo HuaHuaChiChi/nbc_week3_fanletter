@@ -32,7 +32,7 @@ const Letters = styled.ul`
   flex-direction: column;
   gap: 20px;
   width: 500px;
-  background-color: black;
+  background-color: #262626;
   padding: 20px;
   border-radius: 5px;
   margin: 0 auto;

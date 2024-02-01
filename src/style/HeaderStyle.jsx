@@ -6,7 +6,7 @@ export const Container = styled.header`
   width: 100%;
   height: 300px;
   margin-bottom: 20px;
-  background-color: green;
+  background-color: #262626;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@ export const Title = styled.h1`
   text-align: center;
   font-size: 50px;
   font-weight: 700;
-  color: #f1f43f;
+  color: white;
   min-width: 475px;
 `;
 
@@ -35,13 +35,14 @@ export const ButtonWrap = styled.div`
 
 export const MemberButton = styled.button`
   font-size: 20px;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 5px;
   width: 100px;
   padding: 5px;
   text-align: center;
-  background-color: ${({ $isSelected }) => ($isSelected ? "red" : "initial")};
+  color : white;
+  background-color: ${({ $isSelected }) => ($isSelected ? "red" : "darkgray")};
   &:hover {
-    background-color: red;
+    background-color: #282828;
   }
 `;
