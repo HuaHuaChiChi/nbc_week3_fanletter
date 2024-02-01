@@ -41,27 +41,11 @@
       "id": "5"
     },
     {
-      "id": 6,
-      "createdAt": "2024-02-01T05:18:43.001Z",
-      "nickname": "새로운 유저",
-      "avatar": "aa",
-      "content": "새로운 편지 내용",
-      "writedTo": "카리나"
-    },
-    {
-      "id": 7,
-      "createdAt": "2024-02-01T05:18:57.224Z",
-      "nickname": "새로운 유저",
-      "avatar": "aa",
-      "content": "새로운 편지 내용",
-      "writedTo": "카리나"
-    },
-    {
-      "id": 8,
-      "createdAt": "2024-02-01T05:18:59.185Z",
-      "nickname": "새로운 유저",
-      "avatar": "aa",
-      "content": "새로운 편지 내용",
+      "id": "02bc2d5e-2e0f-440e-9bcd-fb46d36ef1a5",
+      "createdAt": "2024-02-01T09:53:09.621Z",
+      "nickname": "ㄹ",
+      "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
+      "content": "ㄹ",
       "writedTo": "카리나"
     }
   ]

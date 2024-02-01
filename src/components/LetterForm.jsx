@@ -1,20 +1,34 @@
-import styled from "styled-components"
+import { useState } from "react";
+import { v4 as uuidv4} from "uuid";
+import {
+  FormContainer,
+  InputSection,
+  NicknameInput,
+  TextArea
+} from "../style/LetterFromStyle"
+import defaultImg from "../style/common/defaultImg.png"
+
+
 
 function LetterForm({data, setData}) {
+
+  const [nickname, setNickname] = useState("");
+  const [content, setContent] = useState("");
+  const [selectMember, setSelectMember] = useState("카리나");
 
   const addNewLetter = () => {
     const newLetter = {
       createdAt: new Date().toISOString(),
-      nickname: "새로운 유저",
-      avatar : "aa",
-      content: "새로운 편지 내용",
-      writedTo: "카리나",
-      id : data.length +1}
+      nickname,
+      avatar : defaultImg,
+      content,
+      writedTo: selectMember,
+      id : uuidv4()}
     fetch("http://localhost:3001/memo",{
       method: "post",
       body: JSON.stringify(newLetter)
     })
-    .then((response) => response.json())
+    .then((response) => response.json())  //fetch 가 되면 response를 반환 response의 json 데이터 뽑아오고
     .then((json) => {
       setData([(prevData) => [...prevData, json]]); // 새로운 데이터를 기존 데이터에 추가
     })
@@ -25,14 +39,27 @@ function LetterForm({data, setData}) {
   return (
     <FormContainer>
       <InputSection>
-      <a>닉네임:&nbsp;</a> <input></input>
+      <a style={{ width: 190 }}>닉네임:&nbsp;</a>
+        <NicknameInput
+          value={nickname}
+          placeholder="최대 20글자까지 작성할 수 있습니다."
+          maxLength={20}
+          onChange={(e) => setNickname(e.target.value)}
+        />
       </InputSection>
       <InputSection>
-      <a>내용:&nbsp;</a> <input></input>
+      <a style={{ width: 190 }}>내용:&nbsp;</a> 
+        <TextArea
+          value={content}
+          placeholder="최대 100자까지만 작성할 수 있습니다."
+          maxLength={100}
+          onChange={(e) => setContent(e.target.value)}
+        />
       </InputSection>
       <InputSection>
       <a>누구한테 보낼거셈:&nbsp;</a>
-        <select>
+        <select value={selectMember}
+        onChange={(e) => setSelectMember(e.target.value)}>
           <option value="카리나">카리나</option>
           <option value="윈터">윈터</option>
           <option value="닝닝">닝닝</option>
@@ -47,14 +74,3 @@ function LetterForm({data, setData}) {
 
 export default LetterForm
 
-const FormContainer = styled.form`
-display :flex;
-justify-content : center;
-flex-direction : column;
-`
-
-const InputSection = styled.div`
-display :flex;
-justify-content : center;
-flex-direction : row;
-`

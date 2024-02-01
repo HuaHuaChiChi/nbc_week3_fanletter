@@ -1,8 +1,27 @@
+import styled from "styled-components";
 
-function LetterFromStyle() {
-  return (
-    <div>LetterFromStyle</div>
-  )
-}
 
-export default LetterFromStyle
+export const FormContainer = styled.form`
+  width: 500px;
+  background-color: #3e9c3e;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+`
+
+export const InputSection = styled.div`
+  margin-bottom: 10px;
+  display: flex;
+`
+
+export const NicknameInput = styled.input`
+  width: 100%;
+  padding: 5px 10px;
+`;
+
+export const TextArea = styled.textarea`
+  resize: none;
+  height: 80px;
+  width: 100%;
+  padding: 5px 10px;
+`;
