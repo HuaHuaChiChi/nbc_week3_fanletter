@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import {
   Avatar,
   Content,
@@ -8,10 +9,14 @@ import {
 
 function Letter({ data }) {
 
+  console.log(data)
+
+  const navigate = useNavigate();
+
   const {createdAt, nickname, avatar, content, id} = data
 
   return (
-    <LetterCard id={id}>
+    <LetterCard onClick={() => {navigate(`/Detail/${id}`, {state: data})}} id={id}>
       <AvatarCardWrap>
       <Avatar src={avatar} alt={"ㅎㅇ루"} />
       <CardContainer>        

@@ -22,7 +22,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main data={data} SetData={SetData} />} />
-        <Route path="Detail" element={<Detail />} />
+        <Route path="Detail/:id" element={<Detail />} />
       </Routes>
     </BrowserRouter>
   );

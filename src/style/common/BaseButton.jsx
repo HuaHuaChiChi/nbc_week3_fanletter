@@ -12,9 +12,7 @@ const StyledButton = styled.button`
 
 function BaseButton({ children }) {
   return (
-    <div>
       <StyledButton>{children}</StyledButton>
-    </div>
   );
 }
 

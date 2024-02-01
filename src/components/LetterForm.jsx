@@ -39,7 +39,7 @@ function LetterForm({data, setData}) {
 
 
   return (
-    <FormContainer>
+    <FormContainer onSubmit={addNewLetter}>
       <InputSection>
       <Labels>닉네임:&nbsp;</Labels>
         <NicknameInput
@@ -68,7 +68,7 @@ function LetterForm({data, setData}) {
           <option value="지젤">지젤</option>
         </select>
       </InputSection>
-      <BaseButton onClick={addNewLetter}>ㄱㄱ</BaseButton>
+      <BaseButton>ㄱㄱ</BaseButton>
 
     </FormContainer>
   )
