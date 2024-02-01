@@ -40,7 +40,7 @@ export const MemberButton = styled.button`
   width: 100px;
   padding: 5px;
   text-align: center;
-  background-color: ${({ isSelected }) => (isSelected ? "red" : "initial")};
+  background-color: ${({ $isSelected }) => ($isSelected ? "red" : "initial")};
   &:hover {
     background-color: red;
   }

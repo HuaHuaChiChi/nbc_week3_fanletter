@@ -22,7 +22,7 @@ function Main({data, setData}) {
   return (
     <Container>
       <Header selectedMember={selectedMember} setSelectedMember={setSelectedMember}/>
-      <LetterForm setData={setData}/>
+      <LetterForm setData={setData} data={data}/>
       <LetterList data={filteredLetters}/>
       <Footer/>
     </Container>

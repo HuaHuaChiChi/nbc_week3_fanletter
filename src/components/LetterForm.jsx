@@ -1,6 +1,27 @@
 import styled from "styled-components"
 
-function LetterForm() {
+function LetterForm({data, setData}) {
+
+  const addNewLetter = () => {
+    const newLetter = {
+      createdAt: new Date().toISOString(),
+      nickname: "새로운 유저",
+      avatar : "aa",
+      content: "새로운 편지 내용",
+      writedTo: "카리나",
+      id : data.length +1}
+    fetch("http://localhost:3001/memo",{
+      method: "post",
+      body: JSON.stringify(newLetter)
+    })
+    .then((response) => response.json())
+    .then((json) => {
+      setData([(prevData) => [...prevData, json]]); // 새로운 데이터를 기존 데이터에 추가
+    })
+
+  }
+
+
   return (
     <FormContainer>
       <InputSection>
@@ -18,7 +39,7 @@ function LetterForm() {
           <option value="지젤">지젤</option>
         </select>
       </InputSection>
-      <button>ㄱㄱ</button>
+      <button onClick={addNewLetter}>ㄱㄱ</button>
 
     </FormContainer>
   )
