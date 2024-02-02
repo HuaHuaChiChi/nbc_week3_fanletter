@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledButton = styled.button`
   font-size: 20px;
@@ -10,10 +11,15 @@ const StyledButton = styled.button`
   }
 `;
 
-function BaseButton({ children }) {
+function BaseButton({ children, onClick }) {
+  const handleClick = () => {
+    onClick && onClick();
+  }
+
   return (
-      <StyledButton>{children}</StyledButton>
+    <StyledButton onClick={handleClick}>{children}</StyledButton>
   );
 }
 
 export default BaseButton;
+//NOTE - 스타일된 컴포넌트에 onclick 속성을 넣고싶을 땐 여기에 onclick 속성을 넣어줘야함

@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import styled from 'styled-components';
-function Detail({data}) {
+import BaseButton from '../style/common/BaseButton';
+function Detail({data, SetData}) {
+  const [isEdit, setIsEdit] = useState(false)
+  const [updateText, setUpdateText] = useState("")
+
   // const location = useLocation();
   // const id = location.state;
   const navigate = useNavigate()
@@ -10,6 +14,26 @@ function Detail({data}) {
   const [detailLetter] = data.filter(item => item.id === id);
   console.log(detailLetter)
 
+  const handleDelete = () => {
+    fetch(`http://localhost:3001/memo/${id}`, {
+      method: "DELETE",
+    }).then(() => {
+    navigate("/");
+    const deleteData = data.filter(item => item.id !== id);
+    SetData(deleteData);
+    })
+  }
+
+  const handleUpdateText = () => {
+    fetch(`http://localhost:3001/memo/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify({ content: updateText })
+    }).then(() => {
+    SetData(data);
+    navigate("/");
+    })
+  }
+  
   return (
     <Container>
       <BackButton onClick={() =>navigate("/")}>뒤로가기</BackButton>
@@ -21,8 +45,29 @@ function Detail({data}) {
         </DetailHeader>
         <DetailWritedTo>To: {detailLetter.writedTo}</DetailWritedTo>      
         <DetailContent>
-          <Content>{detailLetter.content}</Content>
+        {isEdit ? (
+            <EditTextArea
+              onChange={(e) => setUpdateText(e.target.value)}
+              defaultValue={detailLetter.content}
+              maxLength={100} 
+            />
+          ) : (
+            <Content>{detailLetter.content}</Content>
+          )}
         </DetailContent>
+        <ButtonWrap>
+        {isEdit ? (
+          <>
+            <BaseButton onClick={() => setIsEdit(false)}>취소</BaseButton>
+            <BaseButton onClick={handleUpdateText}>수정완료</BaseButton>
+          </>
+        ) : (
+          <>
+            <BaseButton onClick={handleDelete}>삭제하기</BaseButton>
+            <BaseButton onClick={() => setIsEdit(true)}>수정하기</BaseButton>
+          </>
+        )}  
+        </ButtonWrap>
       </DetailCard>
 
     </Container>
@@ -30,6 +75,11 @@ function Detail({data}) {
 }
 
 export default Detail
+
+const ButtonWrap = styled.div`
+display:flex;
+gap :10px;
+`
 
 const Time = styled.p`
 position: absolute;
@@ -45,18 +95,33 @@ const Content = styled.p`
   margin: 24px 0;
   height: 275px;`
 
-const DetailWritedTo = styled.p``
+const DetailWritedTo = styled.p`
+font-size : 23px;
+margin-top : 5px;
+`
 
 const DetailContent = styled.div`
-
+display :flex;
+justify-content : center;
 `
+
+const EditTextArea = styled.textarea`
+  background-color: black;
+  color : white;
+  padding: 16px;
+  font-size: 24px;
+  border-radius: 10px;
+  line-height: 48px;
+  margin: 24px 0;
+  height: 275px;
+  width: 768px;`
 
 const DetailHeader = styled.header`
 position: relative;
 display : flex;
 flex-direction : row;
 align-items : center;
-gap : 10px
+gap : 10px;
 `
 
 export const Avatar = styled.img`

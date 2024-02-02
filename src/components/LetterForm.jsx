@@ -12,7 +12,7 @@ import defaultImg from "../style/common/defaultImg.png"
 
 
 
-function LetterForm({data, setData}) {
+function LetterForm({setData}) {
 
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
@@ -34,7 +34,6 @@ function LetterForm({data, setData}) {
     .then((json) => {
       setData([(prevData) => [...prevData, json]]); // 새로운 데이터를 기존 데이터에 추가
     })
-
   }
 
 
