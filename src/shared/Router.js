@@ -31,6 +31,9 @@ const Router = () => {
     });
     fetchData();
   };
+  //이거 setData로 렌더링 변경할 수 있을 것 같긴 한데. 편한건 이게 편하고..
+  //근데 server에 한번 더 요청하는 서버비는 조상님이 내주진 않고,,,
+  //튜터님한테 뭐가 더 좋은지 월요일에 물어보자
 
   return (
     <BrowserRouter>
