@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { v4 as uuidv4} from "uuid";
 import {
   FormContainer,
@@ -9,10 +9,11 @@ import {
 } from "../style/LetterFromStyle"
 import BaseButton from "../style/common/BaseButton"
 import defaultImg from "../style/common/defaultImg.png"
+import { LetterContext } from "../context/LetterContext";
 
 
-
-function LetterForm({addLetterJson}) {
+function LetterForm() {
+  const {addLetterJson} = useContext(LetterContext)
 
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");

@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "../pages/Main";
 import Detail from "../pages/Detail";
 import { useEffect, useState } from "react";
+import { LetterContext } from "../context/LetterContext";
 
 const Router = () => {
   const [data, setData] = useState([]);
@@ -37,16 +38,12 @@ const Router = () => {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={<Main data={data} addLetterJson={addLetterJson} />}
-        />
-        <Route
-          path="Detail/:id"
-          element={<Detail data={data} setData={setData} />}
-        />
-      </Routes>
+      <LetterContext.Provider value={{ data, setData, addLetterJson }}>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="Detail/:id" element={<Detail />} />
+        </Routes>
+      </LetterContext.Provider>
     </BrowserRouter>
   );
 };

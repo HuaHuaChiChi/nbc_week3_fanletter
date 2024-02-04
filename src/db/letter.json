@@ -6,7 +6,7 @@
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/36.jpg",
       "content": "카리아나",
       "writedTo": "카리나",
-      "id": "1"
+      "id": "99c66379-5bb1-4749-a193-79046942cfd5"
     },
     {
       "createdAt": "2023-11-02T23:13:18.491Z",
@@ -14,7 +14,7 @@
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/298.jpg",
       "content": "지젤1 Ipsam aspernatur nostrum eos unde velit molestiae dolorem. Tenetur ullam nostrum pariatur. Et in eos. Harum commodi ipsa quaerat aspernatur quod dignissimos quae quidem sapiente.",
       "writedTo": "지젤",
-      "id": "2"
+      "id": "5d082f36-1ef8-4774-b0d3-c7ac98bb0562"
     },
     {
       "createdAt": "2023-11-02T11:25:37.026Z",
@@ -22,7 +22,7 @@
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/646.jpg",
       "content": "윈터1 Itaque nihil quae neque itaque. Non a officiis ducimus nemo consectetur. Ducimus libero voluptatum consequuntur.",
       "writedTo": "윈터",
-      "id": "3"
+      "id": "d2967648-8568-409a-bc40-f1ab40f434a3"
     },
     {
       "createdAt": "2023-11-02T16:06:34.150Z",
@@ -30,7 +30,7 @@
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/37.jpg",
       "content": "닝닝1 Sint qui eligendi repudiandae placeat maiores repudiandae assumenda repudiandae. Distinctio commodi iste. Qui architecto iusto.",
       "writedTo": "닝닝",
-      "id": "4"
+      "id": "e7ac230c-1a5d-4e61-b838-2a0e52eda7ca"
     },
     {
       "createdAt": "2023-11-03T05:40:17.575Z",
@@ -38,7 +38,7 @@
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/720.jpg",
       "content": "카리나2 Molestiae saepe reiciendis saepe natus quo occaecati. Vel vero illum quo. Ducimus maiores porro optio illum officia nam. Cum possimus aut consequatur eaque libero ad nihil pariatur officiis.",
       "writedTo": "카리나",
-      "id": "5"
+      "id": "f9a9267f-90dd-4f92-a082-723939d593a7"
     },
     {
       "id": "aebc2c2d-e6d3-47d3-a61b-f9a74a4b59ec",
@@ -47,38 +47,6 @@
       "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
       "content": "ㄴㅇㅀ",
       "writedTo": "윈터"
-    },
-    {
-      "id": "de4dcafb-007b-416e-a8d5-9ab021d0fd2f",
-      "createdAt": "2024-02-04T05:03:30.177Z",
-      "nickname": "ㅁㅁㅁ",
-      "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
-      "content": "ㅁㅁㅁㅁㅁ",
-      "writedTo": "카리나"
-    },
-    {
-      "id": "71fc7524-56ea-422e-926d-48c24a7e27d1",
-      "createdAt": "2024-02-04T05:11:23.239Z",
-      "nickname": "ㅇㅀ",
-      "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
-      "content": "ㅇㅀ",
-      "writedTo": "카리나"
-    },
-    {
-      "id": "2acf6f98-f3c1-4e7e-bd32-07de583d46c0",
-      "createdAt": "2024-02-04T05:11:32.180Z",
-      "nickname": "김승희",
-      "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
-      "content": "입니다",
-      "writedTo": "카리나"
-    },
-    {
-      "id": "1fb2c4ce-4558-40a2-861c-55a12ea81db5",
-      "createdAt": "2024-02-04T05:12:03.313Z",
-      "nickname": "김승희",
-      "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
-      "content": "입니다",
-      "writedTo": "카리나"
     }
   ]
 }
