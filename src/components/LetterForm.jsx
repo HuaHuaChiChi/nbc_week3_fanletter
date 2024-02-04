@@ -12,13 +12,14 @@ import defaultImg from "../style/common/defaultImg.png"
 
 
 
-function LetterForm({setData}) {
+function LetterForm({addLetterJson}) {
 
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
   const [selectMember, setSelectMember] = useState("카리나");
 
-  const addNewLetter = () => {
+  const addNewLetter = (e) => {
+    e.preventDefault()
     const newLetter = {
       createdAt: new Date().toISOString(),
       nickname,
@@ -26,14 +27,7 @@ function LetterForm({setData}) {
       content,
       writedTo: selectMember,
       id : uuidv4()}
-    fetch("http://localhost:3001/memo",{
-      method: "post",
-      body: JSON.stringify(newLetter)
-    })
-    .then((response) => response.json())  //fetch 가 되면 response를 반환 response의 json 데이터 뽑아오고
-    .then((json) => {
-      setData([(prevData) => [...prevData, json]]); // 새로운 데이터를 기존 데이터에 추가
-    })
+      addLetterJson(newLetter)
   }
 
 

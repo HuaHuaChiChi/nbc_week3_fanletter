@@ -5,7 +5,7 @@ import LetterForm from "../components/LetterForm";
 import LetterList from "../components/LetterList";
 import styled from "styled-components";
 
-function Main({data, setData}) {
+function Main({data, setData, addLetterJson}) {
 
   const [selectedMember, setSelectedMember] = useState("카리나");
   const [filteredLetters, setFilteredLetters] = useState([]);
@@ -22,7 +22,7 @@ function Main({data, setData}) {
   return (
     <Container>
       <Header selectedMember={selectedMember} setSelectedMember={setSelectedMember}/>
-      <LetterForm setData={setData}/>
+      <LetterForm setData={setData} addLetterJson={addLetterJson}/>
       <LetterList data={filteredLetters}/>
       <Footer/>
     </Container>

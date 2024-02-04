@@ -4,7 +4,7 @@
       "createdAt": "2023-11-03T02:07:09.423Z",
       "nickname": "Dr. Clint Christiansen",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/36.jpg",
-      "content": "카리나1 Vitae recusandae tenetur debitis impedit ut dolorem atque reprehenderit magnam. Cum dolor magnam commodi qui perferendis. Vel temporibus soluta. Eum delectus blanditiis. Neque dicta non quod ex. Maiores aspernatur fuga reprehenderit a magni eaque fuga voluptatum hic.",
+      "content": "카리아나",
       "writedTo": "카리나",
       "id": "1"
     },
@@ -41,11 +41,43 @@
       "id": "5"
     },
     {
-      "id": "3c576fd9-ced8-4fb8-82f1-6e84c4c93782",
-      "createdAt": "2024-02-02T16:34:13.729Z",
-      "nickname": "ㄴㅇㄹ",
+      "id": "aebc2c2d-e6d3-47d3-a61b-f9a74a4b59ec",
+      "createdAt": "2024-02-04T04:43:38.502Z",
+      "nickname": "윈터 촤ㅣ고",
       "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
-      "content": "왜 안떠 스테이트 나는야 퉁퉁이 골목대장이라네\n",
+      "content": "ㄴㅇㅀ",
+      "writedTo": "윈터"
+    },
+    {
+      "id": "de4dcafb-007b-416e-a8d5-9ab021d0fd2f",
+      "createdAt": "2024-02-04T05:03:30.177Z",
+      "nickname": "ㅁㅁㅁ",
+      "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
+      "content": "ㅁㅁㅁㅁㅁ",
+      "writedTo": "카리나"
+    },
+    {
+      "id": "71fc7524-56ea-422e-926d-48c24a7e27d1",
+      "createdAt": "2024-02-04T05:11:23.239Z",
+      "nickname": "ㅇㅀ",
+      "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
+      "content": "ㅇㅀ",
+      "writedTo": "카리나"
+    },
+    {
+      "id": "2acf6f98-f3c1-4e7e-bd32-07de583d46c0",
+      "createdAt": "2024-02-04T05:11:32.180Z",
+      "nickname": "김승희",
+      "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
+      "content": "입니다",
+      "writedTo": "카리나"
+    },
+    {
+      "id": "1fb2c4ce-4558-40a2-861c-55a12ea81db5",
+      "createdAt": "2024-02-04T05:12:03.313Z",
+      "nickname": "김승희",
+      "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
+      "content": "입니다",
       "writedTo": "카리나"
     }
   ]
