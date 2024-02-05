@@ -1,8 +1,14 @@
 const SET_DATA = "jsonSet/SET_DATA";
+const FILTER_DATA = "jsonSet/FILTER_DATA";
 
 // 액션 생성 함수
 export const setData = (data) => ({
   type: SET_DATA,
+  payload: data,
+});
+
+export const filterData = (data) => ({
+  type: FILTER_DATA,
   payload: data,
 });
 
@@ -18,6 +24,11 @@ const jsonSet = (state = initialState, action) => {
       return {
         ...state,
         data: action.payload, //...state -> 기존의 코드를 가져옴, data: action.payload -> 액션 생성함수에 들어간 새로 받을 data값으로 바꿔치기
+      };
+    case FILTER_DATA:
+      return {
+        ...state,
+        data: action.payload,
       };
     default:
       return state;
