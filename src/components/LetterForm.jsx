@@ -24,7 +24,7 @@ function LetterForm() {
     const response = await fetch("http://localhost:3001/memo");
     const json = await response.json();
     return json;
-  }; //이거 싹 다 지우고 라우터의 의존성배열에 뭔가 추가하면 더 간결해질 것 같은데
+  }; 
 
   const addNewLetter = async (e) => {
     e.preventDefault()
@@ -41,10 +41,9 @@ function LetterForm() {
       });
   
       const data = await fetchData();
-      dispatch(setData(data));
-    };
+      dispatch(setData(data)); //이거 이렇게 말고 더 간결하게 할 수 있을 것 같은디..
+    }; 
 
-    //한 부분에 있던 코드를 결국 끌고 내려왔는데 이렇게 되는게 맞나요..?
 
   return (
     <FormContainer onSubmit={addNewLetter}>

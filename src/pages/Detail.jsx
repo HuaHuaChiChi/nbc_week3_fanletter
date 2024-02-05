@@ -46,12 +46,7 @@ const handleUpdateText = () => {
     navigate("/");
   });
 };
-  //FIXME - 이거 state 업데이트해서 렌더링이 되게 바꿔줘야함
-  // JSON 서버에 관여하는 로직들을 전부 최상단으로 빼서 PROPS로 넘겨주자
-  // 디테일 페이지 CSS 바꿔줘
-  // CSS 스타일 컴포넌트에 옮겨줘
-  // TIL 써줘
-  // 유효성 검사 넣어줘
+
   
   return (
     <S.Container>

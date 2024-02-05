@@ -33,4 +33,6 @@ export default jsonSet;
 
 // 상태를 꺼내서 쓰고 싶을 땐 useSelector
 // import { useSelector } from 'react-redux';
-//const jsonData = useSelector((state) => state.jsonSet.data);
+// const jsonData = useSelector((state) => state.jsonSet.data);
+
+// 하나의 모듈엔 하나의 state만 넣는다고 생각하자
