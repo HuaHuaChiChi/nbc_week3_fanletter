@@ -79,6 +79,14 @@
       "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
       "content": "입니다",
       "writedTo": "카리나"
+    },
+    {
+      "id": "a3a8e0a2-7150-4e1f-9578-ca04b2440e4c",
+      "createdAt": "2024-02-05T07:24:14.380Z",
+      "nickname": "김승희",
+      "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
+      "content": "반갑습니다",
+      "writedTo": "지젤"
     }
   ]
 }
