@@ -34,7 +34,11 @@ const Router = () => {
   //이거 setData로 렌더링 변경할 수 있을 것 같긴 한데. 편한건 이게 편하고..
   //근데 server에 한번 더 요청하는 서버비는 조상님이 내주진 않고,,,
   //튜터님한테 뭐가 더 좋은지 월요일에 물어보자
-
+  // .then((response) => response.json())
+  //   .then((json) => {
+  //     setData([...json]);
+  //   });
+  // addLetterJson에 위 코드를 추가하니까 사진이 alt=ㅎㅇ루 이부분이 나오는걸 보니 문자열로 불러와져서 그런건가 확인해보자.
   return (
     <BrowserRouter>
       <Routes>
