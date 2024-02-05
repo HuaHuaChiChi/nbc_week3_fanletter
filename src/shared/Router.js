@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Main from "../pages/Main";
 import Detail from "../pages/Detail";
 import { useEffect } from "react";
@@ -21,6 +21,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="detail/:id" element={<Detail />} />
+        <Route path="*" element={<Navigate replace to="/" />} />
       </Routes>
     </BrowserRouter>
   );

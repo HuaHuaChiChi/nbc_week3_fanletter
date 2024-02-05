@@ -10,6 +10,7 @@ import { filterData } from "../redux/modules/jsonSet";
 
 function Main({setData, addLetterJson}) {
   const jsonData = useSelector((state) => state.jsonSet.data);
+
   const dispatch = useDispatch()
   const [selectedMember, setSelectedMember] = useState("카리나");
 
@@ -20,6 +21,7 @@ function Main({setData, addLetterJson}) {
   //     dispatch(filterData(filtered)); // setFilteredLetters 이후에 dispatch 호출
   //   }
   // }, [selectedMember]);
+  console.log(jsonData);
 
 const filtered = jsonData.filter((letter) => letter.writedTo === selectedMember);
 

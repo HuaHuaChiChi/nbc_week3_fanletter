@@ -4,7 +4,7 @@
       "createdAt": "2023-11-03T02:07:09.423Z",
       "nickname": "Dr. Clint Christiansen",
       "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/36.jpg",
-      "content": "카리아나",
+      "content": "카리아나123123",
       "writedTo": "카리나",
       "id": "1"
     },
@@ -47,14 +47,6 @@
       "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
       "content": "ㄴㅇㅀ",
       "writedTo": "윈터"
-    },
-    {
-      "id": "5c6966d1-56a5-4234-afd3-dc4895b659dd",
-      "createdAt": "2024-02-05T02:43:29.019Z",
-      "nickname": "카리카리나나나",
-      "avatar": "/static/media/defaultImg.b3227731dd6dc3a5094d.png",
-      "content": "카카카 카리나~",
-      "writedTo": "카리나"
     }
   ]
 }
