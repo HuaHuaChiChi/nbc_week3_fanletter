@@ -15,6 +15,7 @@ function Main({setData, addLetterJson}) {
 
   // useEffect(() => {
   //   if (jsonData) {
+      
   //     console.log(filtered, selectedMember);
   //     dispatch(filterData(filtered)); // setFilteredLetters 이후에 dispatch 호출
   //   }
