@@ -9,16 +9,24 @@ import {
 } from "../style/LetterFromStyle"
 import BaseButton from "../style/common/BaseButton"
 import defaultImg from "../style/common/defaultImg.png"
+import { setData } from "../redux/modules/jsonSet";
+import { useDispatch } from "react-redux";
 
 
-
-function LetterForm({addLetterJson}) {
+function LetterForm() {
+  const dispatch = useDispatch();
 
   const [nickname, setNickname] = useState("");
   const [content, setContent] = useState("");
   const [selectMember, setSelectMember] = useState("카리나");
 
-  const addNewLetter = (e) => {
+  const fetchData = async () => {
+    const response = await fetch("http://localhost:3001/memo");
+    const json = await response.json();
+    return json;
+  }; //이거 싹 다 지우고 라우터의 의존성배열에 뭔가 추가하면 더 간결해질 것 같은데
+
+  const addNewLetter = async (e) => {
     e.preventDefault()
     const newLetter = {
       createdAt: new Date().toISOString(),
@@ -27,9 +35,16 @@ function LetterForm({addLetterJson}) {
       content,
       writedTo: selectMember,
       id : uuidv4()}
-      addLetterJson(newLetter)
-  }
+      await fetch("http://localhost:3001/memo", {
+        method: "post",
+        body: JSON.stringify(newLetter),
+      });
+  
+      const data = await fetchData();
+      dispatch(setData(data));
+    };
 
+    //한 부분에 있던 코드를 결국 끌고 내려왔는데 이렇게 되는게 맞나요..?
 
   return (
     <FormContainer onSubmit={addNewLetter}>
