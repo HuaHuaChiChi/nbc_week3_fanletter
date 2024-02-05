@@ -13,20 +13,20 @@ function Main({setData, addLetterJson}) {
   const dispatch = useDispatch()
   const [selectedMember, setSelectedMember] = useState("카리나");
 
-  useEffect(() => {
-    if (jsonData) {
-      const filtered = jsonData.filter((letter) => letter.writedTo === selectedMember);
-      console.log(filtered, selectedMember);
-      dispatch(filterData(filtered)); // setFilteredLetters 이후에 dispatch 호출
-    }
-  }, [selectedMember]);
+  // useEffect(() => {
+  //   if (jsonData) {
+  //     console.log(filtered, selectedMember);
+  //     dispatch(filterData(filtered)); // setFilteredLetters 이후에 dispatch 호출
+  //   }
+  // }, [selectedMember]);
 
+const filtered = jsonData.filter((letter) => letter.writedTo === selectedMember);
 
   return (
     <Container>
       <Header selectedMember={selectedMember} setSelectedMember={setSelectedMember}/>
       <LetterForm setData={setData} addLetterJson={addLetterJson}/>
-      <LetterList />
+      <LetterList filtered={filtered} />
       <Footer/>
     </Container>
   )
