@@ -1,5 +1,7 @@
 const SET_DATA = "jsonSet/SET_DATA";
-const FILTER_DATA = "jsonSet/FILTER_DATA";
+const ADD_DATA = "jsonSet/ADD_DATA";
+const DELATE_DATA = "jsonSet/DELATE_DATA";
+const UPDATE_DATA = "jsonSet/UPDATE_DATA";
 
 // 액션 생성 함수
 export const setData = (data) => ({
@@ -7,8 +9,18 @@ export const setData = (data) => ({
   payload: data,
 });
 
-export const filterData = (data) => ({
-  type: FILTER_DATA,
+export const addData = (data) => ({
+  type: ADD_DATA,
+  payload: data,
+});
+
+export const delateData = (data) => ({
+  type: DELATE_DATA,
+  payload: data,
+});
+
+export const updateData = (data) => ({
+  type: UPDATE_DATA,
   payload: data,
 });
 
@@ -25,7 +37,17 @@ const jsonSet = (state = initialState, action) => {
         ...state,
         data: action.payload, //...state -> 기존의 코드를 가져옴, data: action.payload -> 액션 생성함수에 들어간 새로 받을 data값으로 바꿔치기
       };
-    case FILTER_DATA:
+    case ADD_DATA:
+      return {
+        ...state,
+        data: [...state.data, action.payload],
+      };
+    case DELATE_DATA:
+      return {
+        ...state,
+        data: action.payload,
+      };
+    case UPDATE_DATA:
       return {
         ...state,
         data: action.payload,

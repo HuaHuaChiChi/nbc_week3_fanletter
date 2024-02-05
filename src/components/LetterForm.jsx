@@ -9,7 +9,7 @@ import {
 } from "../style/LetterFromStyle"
 import BaseButton from "../style/common/BaseButton"
 import defaultImg from "../style/common/defaultImg.png"
-import { setData } from "../redux/modules/jsonSet";
+import { addData } from "../redux/modules/jsonSet";
 import { useDispatch } from "react-redux";
 
 
@@ -20,13 +20,7 @@ function LetterForm() {
   const [content, setContent] = useState("");
   const [selectMember, setSelectMember] = useState("카리나");
 
-  const fetchData = async () => {
-    const response = await fetch("http://localhost:3001/memo");
-    const json = await response.json();
-    return json;
-  }; 
-
-  const addNewLetter = async (e) => {
+  const addNewLetter = (e) => {
     e.preventDefault()
     const newLetter = {
       createdAt: new Date().toISOString(),
@@ -35,14 +29,8 @@ function LetterForm() {
       content,
       writedTo: selectMember,
       id : uuidv4()}
-      await fetch("http://localhost:3001/memo", {
-        method: "post",
-        body: JSON.stringify(newLetter),
-      });
-  
-      const data = await fetchData();
-      dispatch(setData(data)); //이거 이렇게 말고 더 간결하게 할 수 있을 것 같은디..
-    }; 
+      dispatch(addData(newLetter));
+      };
 
 
   return (

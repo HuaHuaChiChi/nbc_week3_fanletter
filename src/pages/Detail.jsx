@@ -3,10 +3,11 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import BaseButton from '../style/common/BaseButton';
 import * as S from "../style/DetailStyle"
 import { useSelector, useDispatch } from 'react-redux';
-import { setData } from "../redux/modules/jsonSet";
+import { delateData } from "../redux/modules/jsonSet";
+import { updateData } from '../redux/modules/jsonSet';
 
 function Detail() {
-  const jsonData = useSelector((state) => state.jsonSet.data);
+  const data = useSelector((state) => state.jsonSet.data);
   const dispatch = useDispatch()
   const [isEdit, setIsEdit] = useState(false)
   const [updateText, setUpdateText] = useState("")
@@ -16,38 +17,25 @@ function Detail() {
   const navigate = useNavigate()
   const {id} = useParams()
 
-  const [detailLetter] = jsonData.filter(item => item.id === id);
-  console.log(detailLetter)
+  const [detailLetter] = data.filter(item => item.id === id);
 
   const handleDelete = () => {
-    fetch(`http://localhost:3001/memo/${id}`, {
-      method: "DELETE",
-    }).then(() => {
+    const deleteData = data.filter(item => item.id !== id);
+    dispatch(delateData(deleteData));
     navigate("/");
-    const deleteData = jsonData.filter(item => item.id !== id);
-    dispatch(setData(deleteData));
-    })
   }
-  //navigate가 안먹는 것 같은데
 
-const handleUpdateText = () => {
-  fetch(`http://localhost:3001/memo/${id}`, {
-    method: "PATCH",
-    body: JSON.stringify({ content: updateText })
-  }).then(() => {
-    dispatch(setData((prev) => {
-      return prev.map((item) => {
-        if (item.id === id) {
-          return { ...item, content: updateText };
-        }
-        return item;
-      });
-    }));
-    navigate("/");
-  });
+  const handleUpdateText = () => {
+  const updatedData = data.map(item => {
+    if (item.id === id) {
+      return {...item, content : updateText}
+    }
+    return item;
+  })
+  dispatch(updateData(updatedData))
+  navigate("/");
 };
 
-  
   return (
     <S.Container>
       <S.BackButton onClick={() =>navigate("/")}>뒤로가기</S.BackButton>
@@ -90,3 +78,24 @@ const handleUpdateText = () => {
 
 export default Detail
 
+//   const handleDelete = () => {
+//     fetch(`http://localhost:3001/memo/${id}`, {
+//       method: "DELETE",
+//     }).then(() => {
+//     navigate("/");
+//     const deleteData = jsonData.filter(item => item.id !== id);
+//     dispatch(setData(deleteData));
+//     })
+//   }
+//   //navigate가 안먹는 것 같은데
+
+// const handleUpdateText = () => {
+//   fetch(`http://localhost:3001/memo/${id}`, {
+//     method: "PATCH",
+//     body: JSON.stringify({ content: updateText })
+//   }).then(() => {
+//     const data = 
+//     dispatch(setData());
+//     navigate("/");
+//   });
+// };

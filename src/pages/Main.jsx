@@ -4,14 +4,11 @@ import Header from "../components/Header";
 import LetterForm from "../components/LetterForm";
 import LetterList from "../components/LetterList";
 import styled from "styled-components";
-import { useSelector, useDispatch } from 'react-redux';
-import { filterData } from "../redux/modules/jsonSet";
+import { useSelector } from 'react-redux';
 
 
 function Main({setData, addLetterJson}) {
-  const jsonData = useSelector((state) => state.jsonSet.data);
-
-  const dispatch = useDispatch()
+  const data = useSelector((state) => state.jsonSet.data);
   const [selectedMember, setSelectedMember] = useState("카리나");
 
   // useEffect(() => {
@@ -21,9 +18,8 @@ function Main({setData, addLetterJson}) {
   //     dispatch(filterData(filtered)); // setFilteredLetters 이후에 dispatch 호출
   //   }
   // }, [selectedMember]);
-  console.log(jsonData);
 
-const filtered = jsonData.filter((letter) => letter.writedTo === selectedMember);
+const filtered = data.filter((letter) => letter.writedTo === selectedMember);
 
   return (
     <Container>
