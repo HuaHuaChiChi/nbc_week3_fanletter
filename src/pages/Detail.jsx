@@ -7,16 +7,17 @@ import { delateData } from "../redux/modules/jsonSet";
 import { updateData } from '../redux/modules/jsonSet';
 
 function Detail() {
+  //redux에서 데이터를 가져오는 부분
   const data = useSelector((state) => state.jsonSet.data);
   const dispatch = useDispatch()
+
+  //수정 전, 후 상태를 나누기 위한 부분
   const [isEdit, setIsEdit] = useState(false)
   const [updateText, setUpdateText] = useState("")
 
-  // const location = useLocation();
-  // const id = location.state;
+  //detail page에서 선택한 letter의 정보를 받아오기 위한 부분
   const navigate = useNavigate()
   const {id} = useParams()
-
   const [detailLetter] = data.filter(item => item.id === id);
 
   const handleDelete = () => {
@@ -32,9 +33,19 @@ function Detail() {
     }
     return item;
   })
-  dispatch(updateData(updatedData))
+  dispatch(updateData(updatedData)) 
   navigate("/");
 };
+
+//detail 페이지에 이미 코드가 남아있어서 이렇게 코드가 만들어지긴 했는데,
+//   const updatedData = data.map(item => {
+//   if (item.id === id) {
+//     return {...item, content : updateText}
+//   }
+//   return item;
+// })
+// 위 부분을 redux의 case에서도 처리할 수 있을 것 같습니다 어느쪽이 좀 더 좋은 방법일까요?
+
 
   return (
     <S.Container>
@@ -99,3 +110,6 @@ export default Detail
 //     navigate("/");
 //   });
 // };
+
+// const location = useLocation();
+  // const id = location.state;

@@ -2,6 +2,7 @@ const SET_DATA = "jsonSet/SET_DATA";
 const ADD_DATA = "jsonSet/ADD_DATA";
 const DELATE_DATA = "jsonSet/DELATE_DATA";
 const UPDATE_DATA = "jsonSet/UPDATE_DATA";
+const SET_SELECT = "jsonSet/SET_SELECT";
 
 // 액션 생성 함수
 export const setData = (data) => ({
@@ -24,9 +25,15 @@ export const updateData = (data) => ({
   payload: data,
 });
 
+export const selectMember = (member) => ({
+  type: SET_SELECT,
+  payload: member,
+});
+
 // 초기 상태
 const initialState = {
   data: [],
+  selectMember: "카리나",
 };
 
 // 리듀서
@@ -52,12 +59,19 @@ const jsonSet = (state = initialState, action) => {
         ...state,
         data: action.payload,
       };
+    case SET_SELECT:
+      return {
+        ...state, //...state만 쓰니까 모든것이 해결이 된다 만능이야 만능
+        selectMember: action.payload,
+      };
     default:
       return state;
   }
 };
 
 export default jsonSet;
+//이미 데이터를 다 처리하고 나온 새로운 데이터 전체를 저장하기 때문에 case에서 뭔가 여러가지 방법을 사용하지 못해서 아쉽습니다..
+//근데 막상 하라고 하면 어려워서 힘들어 할 듯....ㅎㅎㅎㅎ...
 
 // redux에 상태를 업로드 하고싶을 땐 useDispatch
 // import { useDispatch } from "react-redux";

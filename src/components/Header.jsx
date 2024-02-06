@@ -4,12 +4,17 @@ import {
   ButtonWrap,
   MemberButton,
 } from "../style/HeaderStyle";
+import { selectMember } from "../redux/modules/jsonSet";
+import { useDispatch, useSelector } from "react-redux";
 
-function Header({selectedMember, setSelectedMember}) {
+function Header() {
+  const dispatch = useDispatch();
+  const selectedMember = useSelector((state) => state.jsonSet.selectMember);
 
   const handleMemberClick = (memberName) => {
-    setSelectedMember(memberName);
+    dispatch(selectMember(memberName));
   };
+
 
   return (
     <Container>
