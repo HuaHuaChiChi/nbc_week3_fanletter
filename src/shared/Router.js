@@ -14,7 +14,7 @@ const Router = () => {
       .then((json) => {
         dispatch(setData(json));
       });
-  }, [dispatch]);
+  }, []);
 
   return (
     <BrowserRouter>
