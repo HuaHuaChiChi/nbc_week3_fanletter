@@ -17,7 +17,7 @@ export const addData = (data) => ({
 
 export const delateData = (data) => ({
   type: DELATE_DATA,
-  payload: data,
+  payload: data, //payload는 리듀서에 넣고싶은 데이터
 });
 
 export const updateData = (data) => ({
